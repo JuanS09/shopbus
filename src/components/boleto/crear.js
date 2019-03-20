@@ -55,19 +55,51 @@ const Crear = (props) => {
         activeStep,
         onBack,
         onNext,
+        onChangeRuta,
+        rutaSeleccionada,
+        fecha,
+        onChangeFecha,
+        CantidadDeBoletos,
+        onChangeBoletos,
+        NombreApellido,
+        onChangeNombre,
+        tarjeta,
+        onChangetarjeta,
+        PIN,
+        onChangeNumeroSeguridad,
     } = props;
 
     let stepContenido;
 
     switch(steps[activeStep]) {
         case 'Ruta de viaje':
-            stepContenido = (<RutaDeViaje />)
+            stepContenido = (<RutaDeViaje
+                onChangeRuta={onChangeRuta}
+                rutaSeleccionada={rutaSeleccionada}
+                onChangeFecha={onChangeFecha}
+                fecha={fecha}
+                onChangeBoletos={onChangeBoletos}
+                CantidadDeBoletos={CantidadDeBoletos}
+            />)
             break;
         case 'Información de pago':
-            stepContenido = (<InformacionPago />)
+            stepContenido = (<InformacionPago 
+                onChangeNombre={onChangeNombre}
+                NombreApellido={NombreApellido}
+                onChangetarjeta={onChangetarjeta}
+                tarjeta={tarjeta}
+                onChangeNumeroSeguridad={onChangeNumeroSeguridad}
+                PIN={PIN}
+            />)
             break;
         case 'Realizar pago':
-            stepContenido = (<RealizarPago />)
+            stepContenido = (<RealizarPago
+                rutaSeleccionada={rutaSeleccionada}
+                fecha={fecha}
+                CantidadDeBoletos={CantidadDeBoletos}
+                NombreApellido={NombreApellido}
+                tarjeta={tarjeta}
+            />)
             break;
         default:
             stepContenido = (<h1>{activeStep}</h1>)

@@ -43,7 +43,8 @@ const styles = ({
 
 const RutaDeViaje = (props) => {
 
-    const { classes } = props;
+    const { classes, onChangeNombre,NombreApellido,onChangetarjeta,tarjeta,
+             onChangeNumeroSeguridad, PIN } = props;
 
     return (
         <section>
@@ -53,45 +54,8 @@ const RutaDeViaje = (props) => {
                         id="nombre"
                         label="Nombres y apellidos"
                         className={classes.cuadroDeTexto}
-                    />
-                </Grid>
-            </Grid>
-
-            <section className={classes.separador}></section>
-
-            <Grid container>
-                <Grid item xs={6} md={8}>
-                    <FormControl className={classes.cuadroDeTexto}>
-                        <InputLabel htmlFor="mes">Mes de vencimiento</InputLabel>
-                        <Select
-                            inputProps={{
-                                name: 'mes',
-                                id: 'mes',
-                            }}
-                        >
-                            <MenuItem value="">
-                                <em></em>
-                            </MenuItem>
-                            <MenuItem value={1}>Enero</MenuItem>
-                            <MenuItem value={2}>Febrero</MenuItem>
-                            <MenuItem value={3}>Marzo</MenuItem>
-                            <MenuItem value={4}>Abril</MenuItem>
-                            <MenuItem value={5}>Mayo</MenuItem>
-                            <MenuItem value={6}>Junio</MenuItem>
-                            <MenuItem value={7}>Julio</MenuItem>
-                            <MenuItem value={8}>Agosto</MenuItem>
-                            <MenuItem value={9}>Septiembre</MenuItem>
-                            <MenuItem value={10}>Octubre</MenuItem>
-                            <MenuItem value={11}>Noviembre</MenuItem>
-                            <MenuItem value={12}>Diciembre</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={6} md={4}>
-                    <TextField
-                        id="año"
-                        label="Año de vencimiento"
-                        className={classes.cuadroDeTexto}
+                        onChange={onChangeNombre}
+                        value={NombreApellido}
                     />
                 </Grid>
             </Grid>
@@ -104,13 +68,18 @@ const RutaDeViaje = (props) => {
                         id="tarjeta"
                         label="Número de tarjeta"
                         className={classes.cuadroDeTexto}
+                        onChange={onChangetarjeta}
+                        value={tarjeta}
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <TextField
                         id="cvc"
                         label="Número de seguridad (CVC)"
+                        type={'password'}
                         className={classes.cuadroDeTexto}
+                        onChange={onChangeNumeroSeguridad}
+                        value={PIN}
                     />
                 </Grid>
             </Grid>

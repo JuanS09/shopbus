@@ -43,7 +43,8 @@ const styles = ({
 
 const RutaDeViaje = (props) => {
 
-    const { classes } = props;
+    const { classes, onChangeRuta, rutaSeleccionada, fecha, onChangeFecha,
+        onChangeBoletos, CantidadDeBoletos } = props;
 
     return (
         <section>
@@ -54,6 +55,8 @@ const RutaDeViaje = (props) => {
                         label="Fecha de viaje"
                         className={classes.cuadroDeTexto}
                         type={'date'}
+                        onChange={onChangeFecha}
+                        value={fecha}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -66,19 +69,21 @@ const RutaDeViaje = (props) => {
             <Grid container>
                 <Grid item xs={12}>
                     <FormControl className={classes.cuadroDeTexto}>
-                        <InputLabel htmlFor="ruta">Age</InputLabel>
+                        <InputLabel htmlFor="ruta">Ruta</InputLabel>
                         <Select
                             inputProps={{
                                 name: 'ruta',
                                 id: 'ruta',
                             }}
+                            value={rutaSeleccionada}
+                            onChange={onChangeRuta}
                         >
                             <MenuItem value="">
                                 <em></em>
                             </MenuItem>
-                            <MenuItem value={10}>Juigalpa 08:00AM - Managua 10:00AM <b>C$ 100</b></MenuItem>
-                            <MenuItem value={20}>Juigalpa 02:00AM - Masaya 04:00AM <b>C$ 90</b></MenuItem>
-                            <MenuItem value={30}>Managua 04:00AM - Santo Tomás 07:00AM <b>C$ 120</b></MenuItem>
+                            <MenuItem value={'10'}>Juigalpa 08:00AM - Managua 10:00AM <b> C$ 100 </b></MenuItem>
+                            <MenuItem value={'20'}>Juigalpa 02:00AM - Masaya 04:00AM <b> C$ 90 </b></MenuItem>
+                            <MenuItem value={'30'}>Managua 04:00AM - Santo Tomás 07:00AM <b> C$ 120</b></MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>
@@ -92,6 +97,9 @@ const RutaDeViaje = (props) => {
                         id="cantidad"
                         label="Cantidad de boletos"
                         className={classes.cuadroDeTexto}
+                        onChange={onChangeBoletos}                       
+                        defaultValue={CantidadDeBoletos}
+                       
                     />
                 </Grid>
             </Grid>
