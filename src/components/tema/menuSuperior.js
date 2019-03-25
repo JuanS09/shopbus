@@ -86,12 +86,12 @@ const styles = theme => ({
 
 
 function MenuSuperior(props) {
-  const { classes } = props;
+  const { classes, onClickDrawerMenu } = props;
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+          <IconButton className={classes.menuButton} onClick={onClickDrawerMenu} color="inherit" aria-label="Open drawer">
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
