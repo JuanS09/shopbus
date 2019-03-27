@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Crear from './../../components/boleto/crear'
+import realizarPago from '../../components/boleto/realizar-pago';
 
 class CrearContainer extends Component {
 
@@ -21,10 +22,43 @@ class CrearContainer extends Component {
     }
 
     handleNext = () => {
-        const { activeStep } = this.state;
+        let { activeStep } = this.state;
+        
+        switch(activeStep) {
+            case 0: {
+                const { fecha, rutaSeleccionada, CantidadDeBoletos } = this.state;
+                console.log(fecha, rutaSeleccionada, CantidadDeBoletos);
+                if(fecha === '' || rutaSeleccionada === '' || CantidadDeBoletos <= 0) {
+                    return;
+                }
+                break;
+            }
+            case 1: {
+                const {NombreApellido, tarjeta, PIN} = this.state;
+                console.log(NombreApellido, tarjeta, PIN);
+                if(NombreApellido === '' || tarjeta === '' || PIN <= 0) {
+                    return;
+                }
+                break;
+            }
+            case 2: {
+                if (realizarPago !== 0){
+                    return;
+                }
+                break;
+            }
+        }
+
+        if(activeStep === 3) {
+            activeStep = 0;
+        }
+        else {
+            activeStep += 1;
+        }
+
         let { skipped } = this.state;
         this.setState({
-            activeStep: activeStep + 1,
+            activeStep: activeStep,
             skipped,
         });
     };
@@ -72,8 +106,11 @@ class CrearContainer extends Component {
     }
 
     render() {
+
         const steps = ['Ruta de viaje', 'Información de pago', 'Realizar pago'];
+
         const { activeStep, rutaSeleccionada, fecha, CantidadDeBoletos, NombreApellido, tarjeta, PIN } = this.state;
+
         return (
             <Crear
                 steps={ steps }
@@ -81,7 +118,7 @@ class CrearContainer extends Component {
                 onNext={this.handleNext}
                 onBack={this.handleBack}
                 rutaSeleccionada={rutaSeleccionada}
-                onChangeRuta={this.handleChangeRuta}    
+                onChangeRuta={this.handleChangeRuta}
                 fecha={fecha}
                 onChangeFecha={this.handleChangeFecha}
                 CantidadDeBoletos={CantidadDeBoletos}
@@ -94,6 +131,7 @@ class CrearContainer extends Component {
                 onChangeNumeroSeguridad={this.handleChangeNumeroSeguridad}
             />
         );
+
     }
 
 }
