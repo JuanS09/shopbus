@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import { Link } from 'react-router-dom'
+
 const styles = ({
     pagina: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -30,6 +32,7 @@ const styles = ({
         display: 'flex',
         justifyContent: 'space-between',
     },
+
 });
 
 const Entrar = (props) => {
@@ -58,9 +61,11 @@ const Entrar = (props) => {
                     <Button variant="contained" color="secondary" className={classes.button}>
                         Iniciar Sesión
                     </Button>
-                    <Button variant="outlined" color="secondary" className={classes.button}>
-                        Registrarse
-                    </Button>
+                    <Link to={'/registrarse'}>
+                        <Button variant="outlined" color="secondary" className={classes.button}>
+                            Registrarse
+                        </Button>
+                    </Link>
                 </section>
             </Paper>
         </section>

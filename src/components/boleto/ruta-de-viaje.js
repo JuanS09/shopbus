@@ -81,9 +81,17 @@ const RutaDeViaje = (props) => {
                             <MenuItem value="">
                                 <em></em>
                             </MenuItem>
-                            <MenuItem value={'10'}>Juigalpa 08:00AM - Managua 10:00AM <b> C$ 100 </b></MenuItem>
-                            <MenuItem value={'20'}>Juigalpa 02:00AM - Masaya 04:00AM <b> C$ 90 </b></MenuItem>
-                            <MenuItem value={'30'}>Managua 04:00AM - Santo Tomás 07:00AM <b> C$ 120</b></MenuItem>
+                            <MenuItem value={'10'}>Juigalpa 05:45AM - Managua 07:40AM <b> C$ 100 </b></MenuItem>
+                            <MenuItem value={'20'}>Juigalpa 07:00AM - Managua 08:30AM <b> C$ 100 </b></MenuItem>
+                            <MenuItem value={'30'}>Juigalpa 08:15AM - Managua 09:45AM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'40'}>Juigalpa 09:00AM - Managua 10:30AM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'50'}>Juigalpa 01:15PM - Managua 03:00PM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'60'}>Managua 09:00AM - Juigalpa 10:30AM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'70'}>Managua 10:15AM - Juigalpa 11:45AM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'80'}>Managua 11:30AM - Juigalpa 01:00AM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'90'}>Managua 12:45PM - Juigalpa 02:15PM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'100'}>Managua 02:00PM - Juigalpa 02:30PM <b> C$ 100</b></MenuItem>
+                            <MenuItem value={'110'}>Managua 03:15AM - Juigalpa 04:45pM <b> C$ 100</b></MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>

@@ -10,6 +10,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import { Link } from 'react-router-dom';
+
 const styles = {
     list: {
         width: 250,
@@ -26,21 +28,31 @@ const MenuDrawer = (props) => {
     const sideList = (
         <div className={classes.list}>
             <List>
-                {['Inicio', 'Quienes Somos', 'Reserva en línea'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
+                <Link to="/">
+                    <ListItem button>
+                        <ListItemIcon><InboxIcon /></ListItemIcon>
+                        <ListItemText primary={'Inicio'} />
                     </ListItem>
-                ))}
+                </Link>
+                <Link to ={'/boleto/descripcion'}>
+                <ListItem button>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary={'Quienes somos?'} />
+                </ListItem>
+                </Link>
+                <Link to="/boleto/crear">
+                    <ListItem button>
+                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemText primary={'Reserva en línea'} />
+                    </ListItem>
+                </Link>
             </List>
             <Divider />
             <List>
-                {['Contactenos', 'Sugerencias'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary={'Contáctenos'} />
+                </ListItem>
             </List>
         </div>
     );
