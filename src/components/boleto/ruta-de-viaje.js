@@ -60,8 +60,14 @@ const RutaDeViaje = (props) => {
         case 'transporte-amador': {
             datos = [
                 {
-                    key: '10',
-                    ruta: 'Juigalpa 05:45AM - Managua 07:40AM',
+                    key: '01',
+                    ruta: 'Juigalpa 05:45 AM - Managua 07:40 AM',
+                    precio: '100',
+                },
+
+                {
+                    key: '02',
+                    ruta: 'Managua 07:15 PM - Juigalpa 09:30 AM',
                     precio: '100',
                 },
             ];
@@ -70,14 +76,14 @@ const RutaDeViaje = (props) => {
         case 'transporte-gonzalez': {
             datos = [
                 {
-                    key: '10',
-                    ruta: 'Juigalpa 01:15AM - Managua 03:15AM',
+                    key: '03',
+                    ruta: 'Juigalpa 01:15 PM - Managua 03:15 PM',
                     precio: '100',
                 },
 
                 {
-                    key: '20',
-                    ruta: 'Juigalpa 08:15AM - Managua 10:45AM',
+                    key: '04',
+                    ruta: 'Managua 06:45 PM - Juigalpa 9:00 PM',
                     precio: '100',
                 },
             ];
@@ -87,25 +93,43 @@ const RutaDeViaje = (props) => {
             datos = [
                 {
                     key: '11',
-                    ruta: 'Juiglapa 07:00AM - Managua 9:00AM',
+                    ruta: 'Juiglapa 07:00 AM - Managua 9:00 AM',
                     precio: '100',
                 },
 
                 {
                     key: '12',
-                    ruta: 'Juigalpa 08:15AM - Managua 10:45AM',
+                    ruta: 'Juigalpa 08:15 AM - Managua 10:45 AM',
                     precio: '100',
                 },
 
                 {
                     key: '13',
-                    ruta: 'Juigalpa 09:30AM - Managua 11:30AM',
+                    ruta: 'Juigalpa 09:30 AM - Managua 11:30 AM',
                     precio: '100',
                 },
 
                 {
                     key: '14',
-                    ruta: 'Juigalpa 10:45AM - Managua 12:45AM',
+                    ruta: 'Managua 09:00 AM - Juigalpa 11:30 AM',
+                    precio: '100',
+                },
+
+                {
+                    key: '10',
+                    ruta: 'Managua 10:15 AM - Juigalpa 12:45 PM',
+                    precio: '100',
+                },
+
+                {
+                    key: '10',
+                    ruta: 'Managua 11:30 AM - Juigalpa 01:45 PM',
+                    precio: '100',
+                },
+
+                {
+                    key: '10',
+                    ruta: 'Managua 12:45 PM - Juigalpa 02:45 PM',
                     precio: '100',
                 },
 

@@ -44,6 +44,22 @@ const Entrar = (props) => {
             <Paper
                 className={classes.formulario}
             >
+                <div style={
+                    {
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }
+                }>
+                    <img
+                        src={process.env.PUBLIC_URL + '/assets/shopbus.png'}
+                        style={
+                            {
+                                width: '150px',
+                                height: '150px',
+                            }
+                        }
+                    />
+                </div>
                 <TextField
                     id="user"
                     label="Usuario"
