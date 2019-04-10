@@ -49,10 +49,12 @@ const MenuDrawer = (props) => {
             </List>
             <Divider />
             <List>
+            <Link to="/boleto/contacto">
                 <ListItem button>
                     <ListItemIcon><InboxIcon /></ListItemIcon>
                     <ListItemText primary={'Contáctenos'} />
                 </ListItem>
+            </Link>
             </List>
         </div>
     );
