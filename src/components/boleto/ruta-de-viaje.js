@@ -43,8 +43,76 @@ const styles = ({
 
 const RutaDeViaje = (props) => {
 
-    const { classes, onChangeRuta, rutaSeleccionada, fecha, onChangeFecha,
-        onChangeBoletos, CantidadDeBoletos } = props;
+    const {
+        classes,
+        onChangeRuta,
+        rutaSeleccionada,
+        fecha,
+        onChangeFecha,
+        onChangeBoletos,
+        CantidadDeBoletos,
+        transporte,
+    } = props;
+
+    let datos = [];
+
+    switch(transporte) {
+        case 'transporte-amador': {
+            datos = [
+                {
+                    key: '10',
+                    ruta: 'Juigalpa 05:45AM - Managua 07:40AM',
+                    precio: '100',
+                },
+            ];
+            break;
+        }
+        case 'transporte-gonzalez': {
+            datos = [
+                {
+                    key: '10',
+                    ruta: 'Juigalpa 01:15AM - Managua 03:15AM',
+                    precio: '100',
+                },
+
+                {
+                    key: '20',
+                    ruta: 'Juigalpa 08:15AM - Managua 10:45AM',
+                    precio: '100',
+                },
+            ];
+            break;
+        }
+        case 'transporte-duartez': {
+            datos = [
+                {
+                    key: '11',
+                    ruta: 'Juiglapa 07:00AM - Managua 9:00AM',
+                    precio: '100',
+                },
+
+                {
+                    key: '12',
+                    ruta: 'Juigalpa 08:15AM - Managua 10:45AM',
+                    precio: '100',
+                },
+
+                {
+                    key: '13',
+                    ruta: 'Juigalpa 09:30AM - Managua 11:30AM',
+                    precio: '100',
+                },
+
+                {
+                    key: '14',
+                    ruta: 'Juigalpa 10:45AM - Managua 12:45AM',
+                    precio: '100',
+                },
+
+            ];
+            break;
+        }
+    }
 
     return (
         <section>
@@ -81,17 +149,13 @@ const RutaDeViaje = (props) => {
                             <MenuItem value="">
                                 <em></em>
                             </MenuItem>
-                            <MenuItem value={'10'}>Juigalpa 05:45AM - Managua 07:40AM <b> C$ 100 </b></MenuItem>
-                            <MenuItem value={'20'}>Juigalpa 07:00AM - Managua 08:30AM <b> C$ 100 </b></MenuItem>
-                            <MenuItem value={'30'}>Juigalpa 08:15AM - Managua 09:45AM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'40'}>Juigalpa 09:00AM - Managua 10:30AM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'50'}>Juigalpa 01:15PM - Managua 03:00PM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'60'}>Managua 09:00AM - Juigalpa 10:30AM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'70'}>Managua 10:15AM - Juigalpa 11:45AM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'80'}>Managua 11:30AM - Juigalpa 01:00AM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'90'}>Managua 12:45PM - Juigalpa 02:15PM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'100'}>Managua 02:00PM - Juigalpa 02:30PM <b> C$ 100</b></MenuItem>
-                            <MenuItem value={'110'}>Managua 03:15AM - Juigalpa 04:45pM <b> C$ 100</b></MenuItem>
+                            {
+                                datos.map((item) => {
+                                    return (
+                                        <MenuItem value={item.key}>{item.ruta} <b> C$ {item.precio} </b></MenuItem>
+                                    )
+                                })
+                            }
                         </Select>
                     </FormControl>
                 </Grid>
