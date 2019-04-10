@@ -1,21 +1,120 @@
 import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Plantilla from './../tema/plantilla';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import TelefonoIcon from '@material-ui/icons/Phone';
+import EmailIcon from '@material-ui/icons/Email';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+
+const styles = theme => ({
+
+    root: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+    },
+
+    titulo: {
+        fontFamily: 'Roboto',
+        fontSize: 24,
+        color: 'rgba(0,0,0,0.8)'
+    },
+
+    texto: {
+        fontFamily: 'Roboto',
+        fontSize: 18,
+        color: 'rgba(0,0,0,0.8)'
+    },
+
+    cuadroDeTexto: {
+        width: '100%',
+    },
+
+    contenedorBotones: {
+        display: 'flex',
+        justifyContent: 'center',       
+    },
+
+    separador: {
+        height: '15px',
+    },
+})
 
 class Contactenos extends Component{
+
     render (){
-        return (
-            <div>
-                <h1> Ponte en contacto </h1>
-                
-                <h4>
 
-                    Puesdes escribir o llamar directamete a nuestra agencia
+        const { classes } = this.props;
+            return (
+                <Plantilla>
+                    <Grid container justify='center'>
+                        <Grid item xs={5}>
+                            <Paper className={classes.root} elevation={1}>
+                                <div>
+                                    <h1 className={classes.titulo}> 
+                                        Ponte en contacto 
+                                    </h1>
+                                        
+                                    <h4 ClassName={classes.texto}>
+                                        Puedes escribir o llamar directamete a nuestra agencia.
+                                    </h4>                
 
-                </h4>                
+                                    <h4 ClassName={classes.texto}>
+                                        ShopBus 
+                                        Oficina principal Nicaragua 
+                                    </h4>
 
-            </div>
+                                    <h4>
+                                        <TelefonoIcon />
+                                        +50586070788
+                                    </h4>
 
+                                    <h4>
+                                        <EmailIcon />
+                                        <a>
+                                            shopbus49@gmail.com
+                                        </a>
+                                    </h4>
+                                </div>
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={5}>
+                        <Paper className={classes.root} elevation={1}>
+                            <TextField
+                                id="nombre"
+                                label="Nombre"
+                                className={classes.cuadroDeTexto}
+                            /> 
+                            <section className={classes.separador}></section>
+
+                            <TextField
+                                id="email"
+                                label="Email"
+                                className={classes.cuadroDeTexto}
+                            />
+                            <section className={classes.separador}></section>
+
+                            <TextField
+                                id="mensaje"
+                                label="Mensaje"
+                                className={classes.cuadroDeTexto}
+                            />
+                            <section className={classes.separador}></section>
+
+                            <section className={classes.contenedorBotones}>
+                                <Button variant="outlined" color="Seconday" className={classes.button}>
+                                    Enviar
+                                </Button>
+                            </section>
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Plantilla>
         )
     }
 };
-
-export default Contactenos;
+  
+export default withStyles (styles)(Contactenos);

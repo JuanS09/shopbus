@@ -67,6 +67,7 @@ const Crear = (props) => {
         onChangetarjeta,
         PIN,
         onChangeNumeroSeguridad,
+        transporte,
     } = props;
 
     let stepContenido;
@@ -74,6 +75,7 @@ const Crear = (props) => {
     switch(steps[activeStep]) {
         case 'Ruta de viaje':
             stepContenido = (<RutaDeViaje
+                transporte={transporte}
                 onChangeRuta={onChangeRuta}
                 rutaSeleccionada={rutaSeleccionada}
                 onChangeFecha={onChangeFecha}
