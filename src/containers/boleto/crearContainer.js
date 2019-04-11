@@ -111,6 +111,8 @@ class CrearContainer extends Component {
 
         const { activeStep, rutaSeleccionada, fecha, CantidadDeBoletos, NombreApellido, tarjeta, PIN } = this.state;
 
+        const { match: { params } } = this.props;
+
         return (
             <Crear
                 steps={ steps }
@@ -129,6 +131,7 @@ class CrearContainer extends Component {
                 onChangetarjeta={this.handleChangetarjeta}
                 PIN={PIN}
                 onChangeNumeroSeguridad={this.handleChangeNumeroSeguridad}
+                transporte={params.transporte}
             />
         );
 

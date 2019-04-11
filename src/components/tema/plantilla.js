@@ -34,7 +34,15 @@ class Plantilla extends Component {
                     open={open}
                     onClose={this.toggleDrawer(false)}
                 />
-                {children}
+                <section
+                    style={{
+                        background: '#e8eaf6',
+                        paddingTop: 24,
+                        paddingBottom: 24,
+                    }}
+                >
+                    {children}
+                </section>
             </section>
         );
 
