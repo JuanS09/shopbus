@@ -27,7 +27,7 @@ const styles = theme => ({
     },
 
     texto: {
-        fontFamily: 'Roboto',
+        fontFamily: '-webkit-body',
         fontSize: 18,
         color: 'rgba(0,0,0,0.8)'
     },
@@ -48,16 +48,26 @@ const styles = theme => ({
 
   });
 
-function ImgMediaCard(props) {
-  const { classes } = props;
-  return (
-      <Plantilla>
-           <div style={
+    function ImgMediaCard(props) {
+        const { classes } = props;
+        return (
+
+            <Plantilla>
+                <div style={
                     {
                         display: 'flex',
-                        justifyContent: 'right',
+                        justifyContent: 'space-between',
                     }
                 }>
+                    <img
+                        src={process.env.PUBLIC_URL + '/assets/shopbus.png'}
+                        style={
+                            {
+                                width: '160px',
+                                height: '150px',
+                            }
+                        }
+                    />
                     <img
                         src={process.env.PUBLIC_URL + '/assets/shopbus.png'}
                         style={
@@ -161,7 +171,7 @@ function ImgMediaCard(props) {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        Transporte Duartez
+                                        Transporte Duartes
                                     </Typography>
                                     <Typography component="p">
                                         viaja mas facil y rapido con esta linea de buses 

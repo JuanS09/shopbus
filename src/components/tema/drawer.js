@@ -40,12 +40,7 @@ const MenuDrawer = (props) => {
                     <ListItemText primary={'Quienes somos?'} />
                 </ListItem>
                 </Link>
-                <Link to="/boleto/crear">
-                    <ListItem button>
-                        <ListItemIcon><MailIcon /></ListItemIcon>
-                        <ListItemText primary={'Reserva en línea'} />
-                    </ListItem>
-                </Link>
+
             </List>
             <Divider />
             <List>

@@ -74,9 +74,11 @@ const Entrar = (props) => {
                 />
                 <section className={classes.separador}></section>
                 <section className={classes.contenedorBotones}>
-                    <Button variant="contained" color="secondary" className={classes.button}>
-                        Iniciar Sesión
-                    </Button>
+                    <Link to={'/'}>
+                        <Button variant="contained" color="secondary" className={classes.button}>
+                            Iniciar Sesión
+                        </Button>
+                    </Link>
                     <Link to={'/registrarse'}>
                         <Button variant="outlined" color="secondary" className={classes.button}>
                             Registrarse

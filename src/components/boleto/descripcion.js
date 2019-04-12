@@ -15,7 +15,7 @@ const styles = theme => ({
     titulo: {
         fontFamily: 'Roboto',
         fontSize: 24,
-        color: 'rgba(0,0,0,0.8)'
+        color: 'rgba(61, 6, 121)'
     },
 
     texto: {

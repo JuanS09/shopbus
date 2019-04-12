@@ -7,6 +7,7 @@ import TelefonoIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { CssBaseline } from '@material-ui/core';
 
 
 const styles = theme => ({
@@ -43,7 +44,7 @@ const styles = theme => ({
     },
 })
 
-class Contactenos extends Component{
+class Contactenos extends Component {
 
     render (){
 
@@ -58,24 +59,24 @@ class Contactenos extends Component{
                                         Ponte en contacto 
                                     </h1>
                                         
-                                    <h4 ClassName={classes.texto}>
+                                    <h4 className={classes.texto}>
                                         Puedes escribir o llamar directamete a nuestra agencia.
                                     </h4>                
 
-                                    <h4 ClassName={classes.texto}>
+                                    <h4 className={classes.texto}>
                                         ShopBus 
                                         Oficina principal Nicaragua 
                                     </h4>
 
-                                    <h4>
+                                    <h4 className={classes.texto}>
                                         <TelefonoIcon />
                                         +50586070788
                                     </h4>
 
-                                    <h4>
+                                    <h4 className={classes.texto}>
                                         <EmailIcon />
-                                        <a>
-                                            shopbus49@gmail.com
+                                        <a 
+                                        href="mailto:shopbus49@gmail.com"> shopbus49@gmail.com
                                         </a>
                                     </h4>
                                 </div>

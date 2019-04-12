@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 const styles = ({
     pagina: {
@@ -77,9 +78,11 @@ const Registrarse = (props) => {
                 />
                 <section className={classes.separador}></section>
                 <section className={classes.contenedorBotones}>
-                    <Button variant="outlined" color="Seconday" className={classes.button}>
-                        Registrarse
-                    </Button>
+                    <Link to={'/'}>
+                        <Button variant="outlined" color="Seconday" className={classes.button}>
+                            Registrarse
+                        </Button>
+                    </Link>
                 </section>
             </Paper>
         </section>
