@@ -110,7 +110,6 @@ function MenuSuperior(props) {
               }}
             />
           </div>
-          <Button color="inherit">Iniciar Sesión</Button>
         </Toolbar>
       </AppBar>
     </div>

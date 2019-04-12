@@ -70,7 +70,7 @@ class Contactenos extends Component {
 
                                     <h4 className={classes.texto}>
                                         <TelefonoIcon />
-                                        +50586070788
+                                        +50586070788 / +50558770083 / +50587943444
                                     </h4>
 
                                     <h4 className={classes.texto}>
